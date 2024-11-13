@@ -1,0 +1,18 @@
+name: Title cleanup
+
+on:
+  pull_request_target:
+    types: [opened, edited]
+  issues:
+    types: [opened, edited]
+
+jobs:
+  Label:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: fregante/no-conventional-commits-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

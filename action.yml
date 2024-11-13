@@ -1,0 +1,22 @@
+name: No Conventional Commits
+description: Removes conventional commits in titles of issues and PRs
+branding:
+  icon: alert-octagon
+  color: orange
+inputs:
+  uppercase-first-letter:
+    description: Whether to uppercase the first letter of the title
+    default: true
+  dry-run:
+    description: 'If true, show what changes would be made without actually making them'
+    default: false
+  token:
+    description: 'The automatically-generated token, set this to \$\{\{ secrets.GITHUB_TOKEN \}\}'
+outputs:
+  changed:
+    description: Whether the title was changed
+  title:
+    description: The title after the replacements or the original title if unchanged
+runs:
+  using: node20
+  main: distribution/index.js

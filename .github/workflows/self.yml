@@ -1,0 +1,19 @@
+name: Self
+on:
+  pull_request_target:
+    types: [opened, edited]
+  issues:
+    types: [opened, edited]
+
+jobs:
+  Self:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        name: Local action
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
