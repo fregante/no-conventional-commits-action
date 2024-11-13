@@ -2,15 +2,25 @@
 
 > Removes conventional commits in titles of issues and PRs.
 
-You can automatically install a [demo workflow](./workflow/no-conventional-commits.yml) with [ghat](https://github.com/fregante/ghat):
+Titles of new issues and PRs will be updated to drop conventional commits keywords, for example:
 
-```sh
-npx -y ghat fregante/no-conventional-commits-action/workflow
+```diff
+- feat: add emoji generator
++ Add emoji generator
+```
+
+```diff
+- fix(generator): generate emojis other than 🤡
++ Generate emojis other than 🤡
 ```
 
 ## Usage
 
-See the [demo workflow](./workflow/no-conventional-commits.yml)
+See the [demo workflow](./workflow/no-conventional-commits.yml). You can also automatically install a the demo with [ghat](https://github.com/fregante/ghat):
+
+```sh
+npx -y ghat fregante/no-conventional-commits-action/workflow
+```
 
 ## Inputs
 
